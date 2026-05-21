@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>input_Tempat Lahir_birth_place</name>
+   <tag></tag>
+   <elementGuidId>e680293e-3af4-43a8-9349-774d993bb9e0</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[@name='birth_place']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>input[name=&quot;birth_place&quot;]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:attr=[placeholder=&quot;Masukkan tempat lahir&quot;i]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>input</value>
+      <webElementGuid>7869abc2-51aa-4c1f-89fe-6f11764478e4</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>text</value>
+      <webElementGuid>5a8281f4-9770-4853-ad61-699ec7f4980e</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>birth_place</value>
+      <webElementGuid>9124dca3-ba15-4e25-94f4-52ed64de3ae6</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>form-control</value>
+      <webElementGuid>253cd266-c2ca-4a89-8a0f-79d6184f2130</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>value</name>
+      <type>Main</type>
+      <value>Bogor, Jawa Barat</value>
+      <webElementGuid>4f4f2081-e1ee-4f94-a284-2e35a389a0e3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>placeholder</name>
+      <type>Main</type>
+      <value>Masukkan tempat lahir</value>
+      <webElementGuid>f7bccef5-34fa-4db8-bf9b-52cbdd736884</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[1]/body[1]/div[@class=&quot;main-content&quot;]/div[@class=&quot;row g-4&quot;]/div[@class=&quot;col-md-8&quot;]/div[@class=&quot;card p-4&quot;]/form[1]/div[@class=&quot;row g-3&quot;]/div[@class=&quot;col-md-6&quot;]/input[@class=&quot;form-control&quot;]</value>
+      <webElementGuid>9994b78a-8549-4675-8a7f-9fbb9c9f85b4</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//input[@name='birth_place']</value>
+      <webElementGuid>c73796f9-d20b-45ad-9ae6-395d2d76067b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[6]/input</value>
+      <webElementGuid>e6455af1-f8c6-4acb-b7be-76d30ca0273a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//input[@type = 'text' and @name = 'birth_place' and @placeholder = 'Masukkan tempat lahir']</value>
+      <webElementGuid>e1323931-1f1d-413a-a518-12b6f3482f2e</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

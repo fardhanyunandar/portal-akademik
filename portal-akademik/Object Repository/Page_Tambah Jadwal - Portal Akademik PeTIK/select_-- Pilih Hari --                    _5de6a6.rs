@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>select_-- Pilih Hari --                    _5de6a6</name>
+   <tag></tag>
+   <elementGuidId>d889f428-d6f8-49ca-b48b-e7a352cf2004</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//select[@name='day']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>select[name=&quot;day&quot;]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>select[name=&quot;day&quot;]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>select</value>
+      <webElementGuid>c33440da-8d43-4fff-a47b-ef9acdea59a8</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>day</value>
+      <webElementGuid>826d5b59-0590-47b0-9ab7-a2f6304764b0</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>form-select</value>
+      <webElementGuid>0ee9a6fa-9e62-4ee9-8111-7056fea28c36</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>
+                            -- Pilih Hari --
+                            Senin
+                            Selasa
+                            Rabu
+                            Kamis
+                            Jumat
+                            Sabtu
+                        </value>
+      <webElementGuid>1317c867-8897-415a-bd8c-8cea7d79d92a</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[1]/body[1]/div[@class=&quot;main-content&quot;]/div[@class=&quot;card p-4 shadow-sm&quot;]/form[1]/div[@class=&quot;row g-3&quot;]/div[@class=&quot;col-md-6&quot;]/select[@class=&quot;form-select&quot;]</value>
+      <webElementGuid>96b052c9-dbcd-4257-a6e5-c9fa88b3762f</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//select[@name='day']</value>
+      <webElementGuid>db93b6bc-479b-4edf-8312-f347595a9509</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='*'])[3]/following::select[1]</value>
+      <webElementGuid>ca439f4a-259e-4c4f-96cc-76e6008ffef1</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Ruangan'])[1]/preceding::select[1]</value>
+      <webElementGuid>44d02182-dc3c-43dd-b2c9-27bbc9bc1c21</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[3]/select</value>
+      <webElementGuid>99dd832a-ced1-4609-9390-9f4016578b29</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//select[@name = 'day' and (text() = '
+                            -- Pilih Hari --
+                            Senin
+                            Selasa
+                            Rabu
+                            Kamis
+                            Jumat
+                            Sabtu
+                        ' or . = '
+                            -- Pilih Hari --
+                            Senin
+                            Selasa
+                            Rabu
+                            Kamis
+                            Jumat
+                            Sabtu
+                        ')]</value>
+      <webElementGuid>15afe289-89c1-40f6-83ea-d449acd9aeea</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

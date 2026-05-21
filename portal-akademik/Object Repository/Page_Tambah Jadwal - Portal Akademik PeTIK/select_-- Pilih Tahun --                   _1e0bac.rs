@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>select_-- Pilih Tahun --                   _1e0bac</name>
+   <tag></tag>
+   <elementGuidId>cf62d8b1-4892-40b2-8126-97316dc74161</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//select[@name='academic_year']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>select[name=&quot;academic_year&quot;]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>select[name=&quot;academic_year&quot;]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>select</value>
+      <webElementGuid>46375bc9-6920-4f49-9d4c-fc32a3a6765f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>academic_year</value>
+      <webElementGuid>1d19a448-b961-4854-b044-1f07dc03a77a</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>form-select</value>
+      <webElementGuid>68581eb1-49de-4c42-9b19-efac40fbd73b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>
+                            -- Pilih Tahun --
+                                                            2026/2027
+                                                            2025/2026
+                                                            2024/2025
+                                                            2023/2024
+                                                    </value>
+      <webElementGuid>432a6089-4f98-4fdb-a7bf-a2483d87502d</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[1]/body[1]/div[@class=&quot;main-content&quot;]/div[@class=&quot;card p-4 shadow-sm&quot;]/form[1]/div[@class=&quot;row g-3&quot;]/div[@class=&quot;col-md-6&quot;]/select[@class=&quot;form-select&quot;]</value>
+      <webElementGuid>9875d3ad-2423-4edc-9809-469e9a973b7b</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//select[@name='academic_year']</value>
+      <webElementGuid>b2aebc8b-31f0-408b-82b7-53d76f1ec2aa</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='*'])[7]/following::select[1]</value>
+      <webElementGuid>9b95074b-91b1-429f-91f4-89e1b04c07c2</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Batal'])[1]/preceding::select[1]</value>
+      <webElementGuid>057399f0-5a8d-49e0-af60-020e69ff6130</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[8]/select</value>
+      <webElementGuid>1fb214d4-3d68-4088-ac3e-58639ec801b0</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//select[@name = 'academic_year' and (text() = '
+                            -- Pilih Tahun --
+                                                            2026/2027
+                                                            2025/2026
+                                                            2024/2025
+                                                            2023/2024
+                                                    ' or . = '
+                            -- Pilih Tahun --
+                                                            2026/2027
+                                                            2025/2026
+                                                            2024/2025
+                                                            2023/2024
+                                                    ')]</value>
+      <webElementGuid>f831e2fd-a5d6-4ec6-bd9a-f11905eba9f0</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
