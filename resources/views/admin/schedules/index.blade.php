@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
 
@@ -32,6 +33,7 @@
             color: #334155;
         }
 
+        /* === Sidebar === */
         .sidebar {
             min-height: 100vh;
             background: linear-gradient(160deg, var(--sidebar-top) 0%, var(--sidebar-bottom) 100%);
@@ -72,12 +74,124 @@
             transform: scale(1.1);
         }
 
+        /* === Main Content === */
         .main-content {
             padding: 30px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             width: 100%;
         }
 
+        /* === Cards === */
+        .card {
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .stat-card {
+            border-left: 4px solid;
+        }
+
+        /* === Tables === */
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead th {
+            background-color: #f8fafc;
+            color: #64748b;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--card-border);
+            padding: 16px;
+        }
+
+        .table td {
+            vertical-align: middle;
+            padding: 16px;
+            color: #475569;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .table tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        /* === Buttons === */
+        .btn-primary-custom {
+            background-color: var(--primary-blue);
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(30, 64, 175, 0.2);
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(30, 64, 175, 0.3);
+            color: white;
+        }
+
+        .btn-action {
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-back-custom {
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* === Badges === */
+        .badge {
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            border-radius: 8px;
+        }
+
+        /* === Forms === */
+        .form-control,
+        .form-select {
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+            padding: 10px 14px;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+
+        /* === Responsive === */
         @media (min-width: 992px) {
             .main-content {
                 margin-left: 260px;
@@ -96,139 +210,102 @@
             }
 
             .main-content {
-                margin-left: 0;
                 padding: 20px;
             }
-        }
-
-        .card {
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-            background: #ffffff;
-            overflow: hidden;
-        }
-
-        .table thead th {
-            background-color: #f8fafc;
-            color: #64748b;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 2px solid var(--card-border);
-            padding: 16px;
-        }
-
-        .table td {
-            vertical-align: middle;
-            white-space: nowrap;
-            padding: 16px;
-            color: #475569;
-            border-bottom: 1px solid var(--card-border);
-        }
-
-        .table tbody tr:hover {
-            background-color: #f1f5f9;
-        }
-
-        .btn-action {
-            width: 36px;
-            height: 36px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            transition: all 0.2s ease;
         }
     </style>
 </head>
 
 <body>
 
-
-    <div class="sidebar d-flex flex-column p-3" id="sidebarMenu">
-        <div class="d-flex justify-content-between align-items-center mb-4 mt-2 px-2">
-            <div class="text-center w-100">
-                <h5 class="text-white fw-bold mb-0">Portal Akademik</h5>
-                <small class="text-white-50">PeTIK Jombang</small>
+    <!-- Sidebar -->
+    <div class="sidebar d-flex flex-column py-3" id="sidebarMenu">
+        <div class="d-flex justify-content-between align-items-center mb-4 mt-2 px-4">
+            <div class="w-100">
+                <h5 class="text-white fw-bold mb-1 portal-brand">Portal Akademik</h5>
+                <small class="text-white-50" style="font-size: 0.8rem;">PeTIK Jombang</small>
             </div>
             <button type="button" class="btn-close btn-close-white d-lg-none" id="btnSidebarClose"
                 aria-label="Close"></button>
         </div>
-        <hr class="text-white mt-0">
+        <hr class="text-white-50 mx-3 mt-0 mb-3 opacity-25">
 
         @php
             $routeName = \Illuminate\Support\Facades\Route::currentRouteName();
         @endphp
+
         <ul class="nav flex-column gap-1">
             <li class="nav-item">
                 <a href="{{ route('admin.dashboard') }}"
                     class="nav-link {{ $routeName === 'admin.dashboard' ? 'active' : '' }}">
-                    <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                    <i class="bi bi-grid-1x2-fill me-3"></i> Dashboard
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('admin.students.index') }}"
                     class="nav-link {{ str_starts_with((string) $routeName, 'admin.students.') ? 'active' : '' }}">
-                    <i class="bi bi-people me-2"></i> Mahasantri
+                    <i class="bi bi-people-fill me-3"></i> Mahasantri
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('admin.lecturers.index') }}"
                     class="nav-link {{ str_starts_with((string) $routeName, 'admin.lecturers.') ? 'active' : '' }}">
-                    <i class="bi bi-person-badge me-2"></i> Dosen
+                    <i class="bi bi-person-badge-fill me-3"></i> Dosen
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('admin.courses.index') }}"
                     class="nav-link {{ str_starts_with((string) $routeName, 'admin.courses.') ? 'active' : '' }}">
-                    <i class="bi bi-book me-2"></i> Mata Kuliah
+                    <i class="bi bi-book-half me-3"></i> Mata Kuliah
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('admin.schedules.index') }}"
                     class="nav-link {{ str_starts_with((string) $routeName, 'admin.schedules.') ? 'active' : '' }}">
-                    <i class="bi bi-calendar3 me-2"></i> Jadwal
+                    <i class="bi bi-calendar-event-fill me-3"></i> Jadwal
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('admin.announcements.index') }}"
                     class="nav-link {{ str_starts_with((string) $routeName, 'admin.announcements.') ? 'active' : '' }}">
-                    <i class="bi bi-megaphone me-2"></i> Pengumuman
+                    <i class="bi bi-megaphone-fill me-3"></i> Pengumuman
                 </a>
             </li>
         </ul>
+
         <div class="mt-auto">
-            <hr class="text-white">
-            <form method="POST" action="{{ route('logout') }}">
+            <hr class="text-white-50 mx-3 opacity-25">
+            <form method="POST" action="{{ route('logout') }}" class="px-2">
                 @csrf
-                <button type="submit" class="nav-link btn btn-link text-start w-100">
-                    <i class="bi bi-box-arrow-left me-2"></i> Logout
+                <button type="submit" class="nav-link btn btn-link text-start w-100 text-decoration-none">
+                    <i class="bi bi-box-arrow-left me-3"></i> Keluar
                 </button>
             </form>
         </div>
     </div>
 
     <div class="main-content">
-        <div class="d-flex justify-content-between align-items-center mb-4 gap-3">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
             <div class="d-flex align-items-center gap-3">
-                <button class="btn btn-white border d-lg-none shadow-sm" type="button" id="btnSidebarToggle">
+                <button class="btn btn-light border d-lg-none shadow-sm text-primary" type="button"
+                    id="btnSidebarToggle">
                     <i class="bi bi-list fs-4"></i>
                 </button>
                 <div>
-                    <h4 class="fw-bold mb-0">Jadwal Kuliah</h4>
-                    <small class="text-muted">Kelola jadwal perkuliahan</small>
+                    <h3 class="fw-bold mb-1" style="color: #0f172a;">Jadwal Kuliah</h3>
+                    <p class="text-muted mb-0" style="font-size: 0.9rem;">Kelola jadwal perkuliahan</p>
                 </div>
             </div>
-            <a href="{{ route('admin.schedules.create') }}" class="btn btn-primary text-nowrap">
-                <i class="bi bi-plus-circle me-2"></i> Tambah Jadwal
+            <a href="{{ route('admin.schedules.create') }}"
+                class="btn btn-primary-custom text-nowrap d-inline-flex align-items-center gap-2">
+                <i class="bi bi-plus-circle-fill"></i> Tambah Jadwal
             </a>
         </div>
 
         @if (session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <i class="bi bi-check-circle me-2"></i>{{ session('success') }}
+            <div class="alert alert-success alert-dismissible fade show border-0 shadow-sm"
+                style="background-color: #d1fae5; color: #065f46; border-radius: 12px;" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i> {{ session('success') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
         @endif
@@ -236,17 +313,17 @@
         <div class="card">
             <div class="card-body p-0">
                 <div class="table-responsive">
-                    <table class="table table-hover align-middle mb-0">
-                        <thead class="table-light">
+                    <table class="table align-middle mb-0">
+                        <thead>
                             <tr>
                                 <th class="ps-4" style="width: 5%">No</th>
-                                <th>Mata Kuliah</th>
-                                <th>Dosen</th>
-                                <th>Hari</th>
-                                <th>Jam</th>
-                                <th>Ruangan</th>
-                                <th>Semester</th>
-                                <th>Status</th>
+                                <th style="width: 25%">Mata Kuliah</th>
+                                <th style="width: 20%">Dosen</th>
+                                <th style="width: 10%">Hari</th>
+                                <th style="width: 15%">Jam</th>
+                                <th style="width: 15%">Ruangan</th>
+                                <th style="width: 10%">Semester</th>
+                                <th style="width: 10%">Status</th>
                                 <th class="text-center" style="width: 10%">Aksi</th>
                             </tr>
                         </thead>
@@ -272,24 +349,33 @@
                                     <td>{{ $schedule->room ?? '-' }}</td>
                                     <td>Semester {{ $schedule->semester }}</td>
                                     <td>
-                                        <span
-                                            class="badge {{ $schedule->status == 'active' ? 'bg-success-subtle text-success' : 'bg-secondary-subtle text-secondary' }} px-2.5 py-1.5">
-                                            {{ $schedule->status == 'active' ? 'Aktif' : 'Tidak Aktif' }}
-                                        </span>
+                                        @if ($schedule->status == 'active')
+                                            <span class="badge bg-success bg-opacity-10 text-success px-3 py-2"
+                                                style="border-radius: 999px; font-weight: 500;">
+                                                <i class="bi bi-dot fs-5 align-middle"></i> Aktif
+                                            </span>
+                                        @else
+                                            <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2"
+                                                style="border-radius: 999px; font-weight: 500;">
+                                                <i class="bi bi-eye-slash fs-5 align-middle"></i> Tidak Aktif
+                                            </span>
+                                        @endif
                                     </td>
                                     <td>
-                                        <div class="d-flex gap-1 justify-content-center pe-3">
+                                        <div class="d-flex gap-2 justify-content-center">
                                             <a href="{{ route('admin.schedules.edit', $schedule->id) }}"
-                                                class="btn btn-sm btn-outline-warning">
-                                                <i class="bi bi-pencil"></i>
+                                                class="btn btn-action btn-light border text-warning" title="Edit">
+                                                <i class="bi bi-pencil-fill"></i>
                                             </a>
                                             <form action="{{ route('admin.schedules.destroy', $schedule->id) }}"
                                                 method="POST" class="d-inline"
                                                 onsubmit="return confirm('Yakin ingin menghapus jadwal ini?')">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-outline-danger">
-                                                    <i class="bi bi-trash"></i>
+                                                <button type="submit"
+                                                    class="btn btn-action btn-light border text-danger"
+                                                    title="Hapus">
+                                                    <i class="bi bi-trash-fill"></i>
                                                 </button>
                                             </form>
                                         </div>
@@ -312,28 +398,22 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Logika Javascript untuk Toggle Lempar Sidebar di Mobile
-        const sidebarMenu = document.getElementById('sidebarMenu');
-        const btnToggle = document.getElementById('btnSidebarToggle');
-        const btnClose = document.getElementById('btnSidebarClose');
+        document.addEventListener("DOMContentLoaded", function() {
+            const sidebarMenu = document.getElementById('sidebarMenu');
+            const btnToggle = document.getElementById('btnSidebarToggle');
+            const btnClose = document.getElementById('btnSidebarClose');
 
-        if (btnToggle && sidebarMenu) {
-            btnToggle.addEventListener('click', () => {
-                sidebarMenu.classList.add('show');
-            });
-        }
-
-        if (btnClose && sidebarMenu) {
-            btnClose.addEventListener('click', () => {
-                sidebarMenu.classList.remove('show');
-            });
-        }
-
-        // Reset class 'show' jika layar di-resize kembali ke mode desktop
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 992) {
-                sidebarMenu.classList.remove('show');
+            if (btnToggle && sidebarMenu) {
+                btnToggle.addEventListener('click', () => sidebarMenu.classList.add('show'));
             }
+            if (btnClose && sidebarMenu) {
+                btnClose.addEventListener('click', () => sidebarMenu.classList.remove('show'));
+            }
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 992 && sidebarMenu) {
+                    sidebarMenu.classList.remove('show');
+                }
+            });
         });
     </script>
 </body>

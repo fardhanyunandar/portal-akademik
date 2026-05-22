@@ -5,33 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Pengumuman - Portal Akademik PeTIK</title>
     <link rel="icon" href="data:,">
-    
-    <!-- Google Fonts: Plus Jakarta Sans -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    
+
     <style>
         :root {
-            --primary-blue: #1e40af; /* Elegant Blue */
+            --primary-blue: #1e40af;
             --primary-hover: #1e3a8a;
-            --sidebar-top: #0f172a; /* Deep Slate/Navy */
-            --sidebar-bottom: #1e3a8a; /* Deep Blue */
-            --bg-color: #f4f7f9; /* Soft Blue-Gray Background */
+            --sidebar-top: #0f172a;
+            --sidebar-bottom: #1e3a8a;
+            --bg-color: #f4f7f9;
             --card-border: #e2e8f0;
         }
 
-        body { 
-            background-color: var(--bg-color); 
+        body {
+            background-color: var(--bg-color);
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: #334155;
         }
-        
-        /* === Sidebar Styles === */
+
+        /* === Sidebar === */
         .sidebar {
             min-height: 100vh;
             background: linear-gradient(160deg, var(--sidebar-top) 0%, var(--sidebar-bottom) 100%);
@@ -41,11 +41,13 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
         }
+
         .sidebar .portal-brand {
             letter-spacing: 0.5px;
         }
+
         .sidebar .nav-link {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             padding: 12px 20px;
             border-radius: 10px;
             margin: 4px 12px;
@@ -53,102 +55,161 @@
             font-size: 0.95rem;
             transition: all 0.2s ease;
         }
+
         .sidebar .nav-link i {
             font-size: 1.1rem;
             transition: transform 0.2s ease;
         }
-        .sidebar .nav-link:hover, .sidebar .nav-link.active {
-            background: rgba(255,255,255,0.15);
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: rgba(255, 255, 255, 0.15);
             color: #ffffff;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
+
         .sidebar .nav-link:hover i {
             transform: scale(1.1);
         }
-        
+
         /* === Main Content === */
-        .main-content { 
-            padding: 30px; 
+        .main-content {
+            padding: 30px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             width: 100%;
         }
-        
-        /* === Cards & Form Fields === */
-        .card { 
-            border: 1px solid var(--card-border); 
-            border-radius: 16px; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
+
+        /* === Cards === */
+        .card {
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
             background: #ffffff;
         }
-        .form-label {
-            color: #475569;
-            font-size: 0.9rem;
-            margin-bottom: 6px;
+
+        .stat-card {
+            border-left: 4px solid;
         }
-        .form-control, .form-select {
-            border: 1px solid var(--card-border);
-            border-radius: 10px;
-            padding: 10px 16px;
-            font-size: 0.95rem;
-            color: #1e293b;
+
+        /* === Tables === */
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead th {
             background-color: #f8fafc;
-            transition: all 0.2s ease-in-out;
+            color: #64748b;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--card-border);
+            padding: 16px;
         }
-        .form-control:focus, .form-select:focus {
-            background-color: #ffffff;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.12);
-            color: #0f172a;
+
+        .table td {
+            vertical-align: middle;
+            padding: 16px;
+            color: #475569;
+            border-bottom: 1px solid var(--card-border);
         }
-        
+
+        .table tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f5f9;
+        }
+
         /* === Buttons === */
         .btn-primary-custom {
             background-color: var(--primary-blue);
             border: none;
             border-radius: 10px;
-            padding: 10px 24px;
+            padding: 10px 20px;
             font-weight: 500;
             box-shadow: 0 4px 10px rgba(30, 64, 175, 0.2);
             transition: all 0.3s ease;
             color: white;
         }
+
         .btn-primary-custom:hover {
             background-color: var(--primary-hover);
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(30, 64, 175, 0.3);
             color: white;
         }
-        .btn-secondary-custom {
-            border: 1px solid var(--card-border);
-            background-color: #ffffff;
-            color: #64748b;
-            border-radius: 10px;
-            padding: 10px 24px;
-            font-weight: 500;
+
+        .btn-action {
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
             transition: all 0.2s ease;
         }
-        .btn-secondary-custom:hover {
-            background-color: #f1f5f9;
-            color: #334155;
-            border-color: #cbd5e1;
+
+        .btn-back-custom {
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
-        /* === Media Queries === */
+        /* === Badges === */
+        .badge {
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            border-radius: 8px;
+        }
+
+        /* === Forms === */
+        .form-control,
+        .form-select {
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+            padding: 10px 14px;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+
+        /* === Responsive === */
         @media (min-width: 992px) {
-            .main-content { 
-                margin-left: 260px; 
+            .main-content {
+                margin-left: 260px;
                 width: calc(100% - 260px);
                 padding: 40px;
             }
         }
+
         @media (max-width: 991.98px) {
             .sidebar {
                 transform: translateX(-100%);
             }
+
             .sidebar.show {
                 transform: translateX(0);
             }
-            .main-content { padding: 20px; }
+
+            .main-content {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -287,27 +348,21 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const sidebarMenu = document.getElementById('sidebarMenu');
             const btnToggle = document.getElementById('btnSidebarToggle');
             const btnClose = document.getElementById('btnSidebarClose');
 
-            if(btnToggle && sidebarMenu) {
-                btnToggle.addEventListener('click', () => {
-                    sidebarMenu.classList.add('show');
-                });
+            if (btnToggle && sidebarMenu) {
+                btnToggle.addEventListener('click', () => sidebarMenu.classList.add('show'));
             }
-
-            if(btnClose && sidebarMenu) {
-                btnClose.addEventListener('click', () => {
-                    sidebarMenu.classList.remove('show');
-                });
+            if (btnClose && sidebarMenu) {
+                btnClose.addEventListener('click', () => sidebarMenu.classList.remove('show'));
             }
-
             window.addEventListener('resize', () => {
-                if (window.innerWidth >= 992) {
+                if (window.innerWidth >= 992 && sidebarMenu) {
                     sidebarMenu.classList.remove('show');
                 }
             });

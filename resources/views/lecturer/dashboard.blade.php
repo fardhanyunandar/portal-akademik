@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="data:,">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lecturer Dashboard - Portal Akademik PeTIK</title>
+    <title>Dashboard - Portal Akademik</title>
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
     <style>
         :root {
             --primary-blue: #1e40af;
@@ -31,6 +31,7 @@
             color: #334155;
         }
 
+        /* === Sidebar === */
         .sidebar {
             min-height: 100vh;
             background: linear-gradient(160deg, var(--sidebar-top) 0%, var(--sidebar-bottom) 100%);
@@ -71,12 +72,14 @@
             transform: scale(1.1);
         }
 
+        /* === Main Content === */
         .main-content {
             padding: 30px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             width: 100%;
         }
 
+        /* === Cards === */
         .card {
             border: 1px solid var(--card-border);
             border-radius: 16px;
@@ -89,6 +92,7 @@
             border-left: 4px solid;
         }
 
+        /* === Tables === */
         .table {
             margin-bottom: 0;
         }
@@ -119,6 +123,7 @@
             background-color: #f1f5f9;
         }
 
+        /* === Buttons === */
         .btn-primary-custom {
             background-color: var(--primary-blue);
             border: none;
@@ -138,17 +143,30 @@
         }
 
         .btn-action {
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 8px;
-            padding: 6px 12px;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
         }
 
+        .btn-back-custom {
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* === Badges === */
         .badge {
             font-weight: 500;
             letter-spacing: 0.3px;
-            border-radius: 6px;
+            border-radius: 8px;
         }
 
+        /* === Forms === */
         .form-control,
         .form-select {
             border-radius: 10px;
@@ -171,6 +189,7 @@
             margin-bottom: 6px;
         }
 
+        /* === Responsive === */
         @media (min-width: 992px) {
             .main-content {
                 margin-left: 260px;
@@ -191,13 +210,6 @@
             .main-content {
                 padding: 20px;
             }
-        }
-
-        .btn-back-custom {
-            border-radius: 10px;
-            padding: 8px 16px;
-            font-size: 0.9rem;
-            font-weight: 500;
         }
     </style>
 </head>
@@ -275,7 +287,7 @@
         <!-- Header -->
         <div class="d-flex justify-content-between align-items-center mb-4">
             <div class="d-flex align-items-center gap-3">
-                <button class="btn btn-white border d-lg-none shadow-sm" type="button" id="btnSidebarToggle">
+                <button class="btn btn-light border d-lg-none shadow-sm text-primary" type="button" id="btnSidebarToggle">
                     <i class="bi bi-list fs-4"></i>
                 </button>
                 <div>
@@ -341,9 +353,9 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const sidebarMenu = document.getElementById('sidebarMenu');
             const btnToggle = document.getElementById('btnSidebarToggle');
             const btnClose = document.getElementById('btnSidebarClose');
@@ -362,5 +374,4 @@
         });
     </script>
 </body>
-
 </html>

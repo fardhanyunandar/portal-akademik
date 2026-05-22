@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="data:,">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Nilai - Portal Akademik PeTIK</title>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
     <style>
         :root {
             --primary-blue: #1e40af;
@@ -31,6 +30,7 @@
             color: #334155;
         }
 
+        /* === Sidebar === */
         .sidebar {
             min-height: 100vh;
             background: linear-gradient(160deg, var(--sidebar-top) 0%, var(--sidebar-bottom) 100%);
@@ -71,12 +71,14 @@
             transform: scale(1.1);
         }
 
+        /* === Main Content === */
         .main-content {
             padding: 30px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             width: 100%;
         }
 
+        /* === Cards === */
         .card {
             border: 1px solid var(--card-border);
             border-radius: 16px;
@@ -89,6 +91,7 @@
             border-left: 4px solid;
         }
 
+        /* === Tables === */
         .table {
             margin-bottom: 0;
         }
@@ -119,6 +122,7 @@
             background-color: #f1f5f9;
         }
 
+        /* === Buttons === */
         .btn-primary-custom {
             background-color: var(--primary-blue);
             border: none;
@@ -138,17 +142,30 @@
         }
 
         .btn-action {
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 8px;
-            padding: 6px 12px;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
         }
 
+        .btn-back-custom {
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* === Badges === */
         .badge {
             font-weight: 500;
             letter-spacing: 0.3px;
-            border-radius: 6px;
+            border-radius: 8px;
         }
 
+        /* === Forms === */
         .form-control,
         .form-select {
             border-radius: 10px;
@@ -171,6 +188,7 @@
             margin-bottom: 6px;
         }
 
+        /* === Responsive === */
         @media (min-width: 992px) {
             .main-content {
                 margin-left: 260px;
@@ -191,13 +209,6 @@
             .main-content {
                 padding: 20px;
             }
-        }
-
-        .btn-back-custom {
-            border-radius: 10px;
-            padding: 8px 16px;
-            font-size: 0.9rem;
-            font-weight: 500;
         }
     </style>
 </head>
@@ -274,7 +285,7 @@
     <div class="main-content">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <div class="d-flex align-items-center gap-3">
-                <button class="btn btn-white border d-lg-none shadow-sm" type="button" id="btnSidebarToggle">
+                <button class="btn btn-light border d-lg-none shadow-sm text-primary" type="button" id="btnSidebarToggle">
                     <i class="bi bi-list fs-4"></i>
                 </button>
                 <div>
@@ -287,14 +298,14 @@
             </a>
         </div>
 
-        <!-- Info -->
+        <!-- Info Formula Nilai Baru -->
         <div class="card p-3 mb-4">
             <div class="row g-3">
                 <div class="col-md-3">
                     <small class="text-muted d-block">Mata Kuliah</small>
                     <strong>{{ $schedule->course->name }}</strong>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <small class="text-muted d-block">Semester</small>
                     <strong>Semester {{ $schedule->semester }}</strong>
                 </div>
@@ -302,9 +313,14 @@
                     <small class="text-muted d-block">Tahun Akademik</small>
                     <strong>{{ $schedule->academic_year }}/{{ $schedule->academic_year + 1 }}</strong>
                 </div>
-                <div class="col-md-3">
-                    <small class="text-muted d-block">Formula Nilai</small>
-                    <strong>Tugas 30% + UTS 35% + UAS 35%</strong>
+                <div class="col-md-4">
+                    <small class="text-muted d-block">Formula Komponen Nilai</small>
+                    <span class="badge bg-light text-dark border">Hadir 5%</span>
+                    <span class="badge bg-light text-dark border">Quiz 15%</span>
+                    <span class="badge bg-light text-dark border">Tugas 15%</span>
+                    <span class="badge bg-light text-dark border">UTS 20%</span>
+                    <span class="badge bg-light text-dark border">UAS 20%</span>
+                    <span class="badge bg-light text-dark border">Project 25%</span>
                 </div>
             </div>
         </div>
@@ -315,75 +331,110 @@
 
             <div class="card">
                 <div class="card-body p-0">
-                    <table class="table table-hover mb-0">
-                        <thead>
-                            <tr>
-                                <th class="ps-4">No</th>
-                                <th>NIM</th>
-                                <th>Nama</th>
-                                <th class="text-center">Tugas (30%)</th>
-                                <th class="text-center">UTS (35%)</th>
-                                <th class="text-center">UAS (35%)</th>
-                                <th class="text-center">Total</th>
-                                <th class="text-center">Grade</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse($students as $index => $student)
-                                @php $existing = $existingGrades[$student->id] ?? null; @endphp
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead>
                                 <tr>
-                                    <td class="ps-4">{{ $index + 1 }}</td>
-                                    <td>{{ $student->nim }}</td>
-                                    <td>{{ $student->name }}</td>
-                                    <td class="text-center">
-                                        <input type="number" name="grades[{{ $student->id }}][assignment]"
-                                            class="form-control form-control-sm grade-input assignment-input"
-                                            data-student="{{ $student->id }}" min="0" max="100"
-                                            step="0.01" value="{{ $existing ? $existing->assignment : '' }}"
-                                            placeholder="0">
-                                    </td>
-                                    <td class="text-center">
-                                        <input type="number" name="grades[{{ $student->id }}][midterm]"
-                                            class="form-control form-control-sm grade-input midterm-input"
-                                            data-student="{{ $student->id }}" min="0" max="100"
-                                            step="0.01" value="{{ $existing ? $existing->midterm : '' }}"
-                                            placeholder="0">
-                                    </td>
-                                    <td class="text-center">
-                                        <input type="number" name="grades[{{ $student->id }}][final_exam]"
-                                            class="form-control form-control-sm grade-input final-input"
-                                            data-student="{{ $student->id }}" min="0" max="100"
-                                            step="0.01" value="{{ $existing ? $existing->final_exam : '' }}"
-                                            placeholder="0">
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="total-display" id="total_{{ $student->id }}">
-                                            {{ $existing ? $existing->total : '0' }}
-                                        </span>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="badge bg-primary" id="letter_{{ $student->id }}">
-                                            {{ $existing ? $existing->letter_grade : '-' }}
-                                        </span>
-                                    </td>
+                                    <th class="ps-4" style="width: 5%">No</th>
+                                    <th style="width: 10%">NIM</th>
+                                    <th style="width: 15%">Nama</th>
+                                    <th class="text-center" style="width: 9%">Hadir (5%)</th>
+                                    <th class="text-center" style="width: 9%">Quiz (15%)</th>
+                                    <th class="text-center" style="width: 9%">Tugas (15%)</th>
+                                    <th class="text-center" style="width: 9%">UTS (20%)</th>
+                                    <th class="text-center" style="width: 9%">UAS (20%)</th>
+                                    <th class="text-center" style="width: 9%">Project (25%)</th>
+                                    <th class="text-center" style="width: 8%">Total</th>
+                                    <th class="text-center" style="width: 8%">Grade</th>
                                 </tr>
-                            @empty
-                                <tr>
-                                    <td colspan="8" class="text-center py-4 text-muted">
-                                        <i class="bi bi-inbox fs-4 d-block mb-2"></i>
-                                        Belum ada data mahasantri
-                                    </td>
-                                </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @forelse($students as $index => $student)
+                                    @php $existing = $existingGrades[$student->id] ?? null; @endphp
+                                    <tr class="student-row" data-student-id="{{ $student->id }}">
+                                        <td class="ps-4">{{ $index + 1 }}</td>
+                                        <td>{{ $student->nim }}</td>
+                                        <td>{{ $student->name }}</td>
+                                        
+                                        <!-- Kehadiran -->
+                                        <td>
+                                            <input type="number" name="grades[{{ $student->id }}][attendance]"
+                                                class="form-control form-control-sm grade-input attendance-input"
+                                                min="0" max="100" step="0.01" 
+                                                value="{{ $existing ? $existing->attendance : '' }}" placeholder="0">
+                                        </td>
+                                        
+                                        <!-- Quiz -->
+                                        <td>
+                                            <input type="number" name="grades[{{ $student->id }}][quiz]"
+                                                class="form-control form-control-sm grade-input quiz-input"
+                                                min="0" max="100" step="0.01" 
+                                                value="{{ $existing ? $existing->quiz : '' }}" placeholder="0">
+                                        </td>
+                                        
+                                        <!-- Tugas -->
+                                        <td>
+                                            <input type="number" name="grades[{{ $student->id }}][assignment]"
+                                                class="form-control form-control-sm grade-input assignment-input"
+                                                min="0" max="100" step="0.01" 
+                                                value="{{ $existing ? $existing->assignment : '' }}" placeholder="0">
+                                        </td>
+                                        
+                                        <!-- UTS -->
+                                        <td>
+                                            <input type="number" name="grades[{{ $student->id }}][midterm]"
+                                                class="form-control form-control-sm grade-input midterm-input"
+                                                min="0" max="100" step="0.01" 
+                                                value="{{ $existing ? $existing->midterm : '' }}" placeholder="0">
+                                        </td>
+                                        
+                                        <!-- UAS -->
+                                        <td>
+                                            <input type="number" name="grades[{{ $student->id }}][final_exam]"
+                                                class="form-control form-control-sm grade-input final-input"
+                                                min="0" max="100" step="0.01" 
+                                                value="{{ $existing ? $existing->final_exam : '' }}" placeholder="0">
+                                        </td>
+                                        
+                                        <!-- Project Akhir -->
+                                        <td>
+                                            <input type="number" name="grades[{{ $student->id }}][project]"
+                                                class="form-control form-control-sm grade-input project-input"
+                                                min="0" max="100" step="0.01" 
+                                                value="{{ $existing ? $existing->project : '' }}" placeholder="0">
+                                        </td>
+                                        
+                                        <!-- Tampilan Total Akhir -->
+                                        <td class="text-center fw-bold">
+                                            <span class="total-display" id="total_{{ $student->id }}">
+                                                {{ $existing ? $existing->total : '0.00' }}
+                                            </span>
+                                        </td>
+                                        
+                                        <!-- Tampilan Huruf Mutu / Grade -->
+                                        <td class="text-center">
+                                            <span class="badge bg-primary id-badge" id="letter_{{ $student->id }}">
+                                                {{ $existing ? $existing->letter_grade : '-' }}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="11" class="text-center py-4 text-muted">
+                                            <i class="bi bi-inbox fs-4 d-block mb-2"></i>
+                                            Belum ada data mahasantri
+                                        </td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
             @if ($students->count() > 0)
                 <div class="mt-4">
-                    <button type="submit"
-                        class="btn btn-primary-custom text-nowrap d-inline-flex align-items-center gap-2">
+                    <button type="submit" class="btn btn-primary-custom text-nowrap d-inline-flex align-items-center gap-2">
                         <i class="bi bi-save me-2"></i> Simpan Nilai
                     </button>
                     <a href="{{ route('lecturer.grades.index') }}" class="btn btn-outline-secondary ms-2">Batal</a>
@@ -394,7 +445,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
+            // === Logika Kontrol Sidebar ===
             const sidebarMenu = document.getElementById('sidebarMenu');
             const btnToggle = document.getElementById('btnSidebarToggle');
             const btnClose = document.getElementById('btnSidebarClose');
@@ -410,8 +462,72 @@
                     sidebarMenu.classList.remove('show');
                 }
             });
+
+            // === Logika Hitung Nilai Otomatis (Real-time) ===
+            const tableBody = document.querySelector('table tbody');
+
+            if (tableBody) {
+                tableBody.addEventListener('input', function (e) {
+                    if (e.target.classList.contains('grade-input')) {
+                        const row = e.target.closest('.student-row');
+                        if (row) {
+                            const studentId = row.getAttribute('data-student-id');
+                            calculateRowTotal(row, studentId);
+                        }
+                    }
+                });
+            }
+
+            function calculateRowTotal(row, studentId) {
+                // Ambil nilai input atau default ke 0 jika kosong
+                const attendance = parseFloat(row.querySelector('.attendance-input').value) || 0;
+                const quiz = parseFloat(row.querySelector('.quiz-input').value) || 0;
+                const assignment = parseFloat(row.querySelector('.assignment-input').value) || 0;
+                const midterm = parseFloat(row.querySelector('.midterm-input').value) || 0;
+                const finalExam = parseFloat(row.querySelector('.final-input').value) || 0;
+                const project = parseFloat(row.querySelector('.project-input').value) || 0;
+
+                // Hitung total berdasarkan formula bobot baru
+                const total = (attendance * 0.05) + 
+                              (quiz * 0.15) + 
+                              (assignment * 0.15) + 
+                              (midterm * 0.20) + 
+                              (finalExam * 0.20) + 
+                              (project * 0.25);
+
+                // Update teks angka total (2 digit di belakang koma)
+                const totalDisplay = document.getElementById(`total_${studentId}`);
+                if (totalDisplay) {
+                    totalDisplay.textContent = total.toFixed(2);
+                }
+
+                // Update huruf mutu / grade beserta warna badge
+                const letterDisplay = document.getElementById(`letter_${studentId}`);
+                if (letterDisplay) {
+                    const grade = getLetterGrade(total);
+                    letterDisplay.textContent = grade;
+                    
+                    // Modifikasi warna badge secara dinamis berdasarkan grade
+                    letterDisplay.className = "badge";
+                    if (grade === 'A') letterDisplay.classList.add('bg-success');
+                    else if (grade === 'B') letterDisplay.classList.add('bg-primary');
+                    else if (grade === 'C') letterDisplay.classList.add('bg-warning', 'text-dark');
+                    else if (grade === 'D') letterDisplay.classList.add('bg-danger');
+                    else if (grade === 'E') letterDisplay.classList.add('bg-secondary');
+                    else letterDisplay.classList.add('bg-dark');
+                }
+            }
+
+            // Fungsi penentu konversi Angka ke Huruf Mutu
+            function getLetterGrade(score) {
+                if (score >= 85) return 'A';
+                if (score >= 70) return 'B';
+                if (score >= 55) return 'C';
+                if (score >= 40) return 'D';
+                if (score > 0) return 'E';
+                return '-';
+            }
         });
     </script>
 </body>
-
 </html>

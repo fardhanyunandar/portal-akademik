@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mata Kuliah - Portal Akademik PeTIK</title>
     <link rel="icon" href="data:,">
-    
-    <!-- Google Fonts: Plus Jakarta Sans -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    
+
     <style>
         :root {
-            --primary-blue: #1e40af; /* Elegant Blue */
+            --primary-blue: #1e40af;
             --primary-hover: #1e3a8a;
-            --sidebar-top: #0f172a; /* Deep Slate/Navy */
-            --sidebar-bottom: #1e3a8a; /* Deep Blue */
-            --bg-color: #f4f7f9; /* Soft Blue-Gray Background */
+            --sidebar-top: #0f172a;
+            --sidebar-bottom: #1e3a8a;
+            --bg-color: #f4f7f9;
             --card-border: #e2e8f0;
         }
 
-        body { 
-            background-color: var(--bg-color); 
+        body {
+            background-color: var(--bg-color);
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: #334155;
         }
-        
-        /* === Sidebar Styles === */
+
+        /* === Sidebar === */
         .sidebar {
             min-height: 100vh;
             background: linear-gradient(160deg, var(--sidebar-top) 0%, var(--sidebar-bottom) 100%);
@@ -41,11 +43,13 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
         }
+
         .sidebar .portal-brand {
             letter-spacing: 0.5px;
         }
+
         .sidebar .nav-link {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             padding: 12px 20px;
             border-radius: 10px;
             margin: 4px 12px;
@@ -53,82 +57,74 @@
             font-size: 0.95rem;
             transition: all 0.2s ease;
         }
+
         .sidebar .nav-link i {
             font-size: 1.1rem;
             transition: transform 0.2s ease;
         }
-        .sidebar .nav-link:hover, .sidebar .nav-link.active {
-            background: rgba(255,255,255,0.15);
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: rgba(255, 255, 255, 0.15);
             color: #ffffff;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
+
         .sidebar .nav-link:hover i {
             transform: scale(1.1);
         }
-        
+
         /* === Main Content === */
-        .main-content { 
-            padding: 30px; 
+        .main-content {
+            padding: 30px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             width: 100%;
         }
-        
-        /* === Cards & Tables === */
-        .card { 
-            border: 1px solid var(--card-border); 
-            border-radius: 16px; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
-            background: #ffffff;
+
+        /* === Cards === */
+        .card {
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
             overflow: hidden;
+            background: #ffffff;
         }
-        .table p { margin-bottom: 0; }
-        .table td, .table th { 
-            vertical-align: middle; 
-            white-space: nowrap; 
-            padding: 16px 20px;
+
+        .stat-card {
+            border-left: 4px solid;
         }
-        .table th {
-            font-weight: 600;
-            color: #475569;
+
+        /* === Tables === */
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead th {
+            background-color: #f8fafc;
+            color: #64748b;
             font-size: 0.85rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--card-border);
+            padding: 16px;
         }
-        
-        /* === Custom Badges === */
-        .badge-code {
-            background-color: #eff6ff;
-            color: #1e40af;
-            border: 1px solid #bfdbfe;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-        .badge-dept {
-            background-color: #f0fdf4;
-            color: #166534;
-            border: 1px solid #bbf7d0;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-        .badge-status-active {
-            background-color: #f0fdf4;
-            color: #166534;
-            padding: 6px 12px;
-            border-radius: 30px;
-            font-weight: 500;
-            font-size: 0.85rem;
-        }
-        .badge-status-inactive {
-            background-color: #f1f5f9;
+
+        .table td {
+            vertical-align: middle;
+            padding: 16px;
             color: #475569;
-            padding: 6px 12px;
-            border-radius: 30px;
-            font-weight: 500;
-            font-size: 0.85rem;
+            border-bottom: 1px solid var(--card-border);
         }
-        
+
+        .table tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f5f9;
+        }
+
         /* === Buttons === */
         .btn-primary-custom {
             background-color: var(--primary-blue);
@@ -140,12 +136,14 @@
             transition: all 0.3s ease;
             color: white;
         }
+
         .btn-primary-custom:hover {
             background-color: var(--primary-hover);
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(30, 64, 175, 0.3);
             color: white;
         }
+
         .btn-action {
             width: 36px;
             height: 36px;
@@ -156,25 +154,68 @@
             transition: all 0.2s ease;
         }
 
-        /* === Media Queries === */
+        .btn-back-custom {
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* === Badges === */
+        .badge {
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            border-radius: 8px;
+        }
+
+        /* === Forms === */
+        .form-control,
+        .form-select {
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+            padding: 10px 14px;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+
+        /* === Responsive === */
         @media (min-width: 992px) {
-            .main-content { 
-                margin-left: 260px; 
+            .main-content {
+                margin-left: 260px;
                 width: calc(100% - 260px);
                 padding: 40px;
             }
         }
+
         @media (max-width: 991.98px) {
             .sidebar {
                 transform: translateX(-100%);
             }
+
             .sidebar.show {
                 transform: translateX(0);
             }
-            .main-content { padding: 20px; }
+
+            .main-content {
+                padding: 20px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Sidebar -->
@@ -184,47 +225,54 @@
                 <h5 class="text-white fw-bold mb-1 portal-brand">Portal Akademik</h5>
                 <small class="text-white-50" style="font-size: 0.8rem;">PeTIK Jombang</small>
             </div>
-            <button type="button" class="btn-close btn-close-white d-lg-none" id="btnSidebarClose" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-white d-lg-none" id="btnSidebarClose"
+                aria-label="Close"></button>
         </div>
         <hr class="text-white-50 mx-3 mt-0 mb-3 opacity-25">
-        
+
         @php
             $routeName = \Illuminate\Support\Facades\Route::currentRouteName();
         @endphp
-        
+
         <ul class="nav flex-column gap-1">
             <li class="nav-item">
-                <a href="{{ route('admin.dashboard') }}" class="nav-link {{ $routeName === 'admin.dashboard' ? 'active' : '' }}">
+                <a href="{{ route('admin.dashboard') }}"
+                    class="nav-link {{ $routeName === 'admin.dashboard' ? 'active' : '' }}">
                     <i class="bi bi-grid-1x2-fill me-3"></i> Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.students.index') }}" class="nav-link {{ str_starts_with((string)$routeName, 'admin.students.') ? 'active' : '' }}">
+                <a href="{{ route('admin.students.index') }}"
+                    class="nav-link {{ str_starts_with((string) $routeName, 'admin.students.') ? 'active' : '' }}">
                     <i class="bi bi-people-fill me-3"></i> Mahasantri
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.lecturers.index') }}" class="nav-link {{ str_starts_with((string)$routeName, 'admin.lecturers.') ? 'active' : '' }}">
+                <a href="{{ route('admin.lecturers.index') }}"
+                    class="nav-link {{ str_starts_with((string) $routeName, 'admin.lecturers.') ? 'active' : '' }}">
                     <i class="bi bi-person-badge-fill me-3"></i> Dosen
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.courses.index') }}" class="nav-link {{ str_starts_with((string)$routeName, 'admin.courses.') ? 'active' : '' }}">
+                <a href="{{ route('admin.courses.index') }}"
+                    class="nav-link {{ str_starts_with((string) $routeName, 'admin.courses.') ? 'active' : '' }}">
                     <i class="bi bi-book-half me-3"></i> Mata Kuliah
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.schedules.index') }}" class="nav-link {{ str_starts_with((string)$routeName, 'admin.schedules.') ? 'active' : '' }}">
+                <a href="{{ route('admin.schedules.index') }}"
+                    class="nav-link {{ str_starts_with((string) $routeName, 'admin.schedules.') ? 'active' : '' }}">
                     <i class="bi bi-calendar-event-fill me-3"></i> Jadwal
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.announcements.index') }}" class="nav-link {{ str_starts_with((string)$routeName, 'admin.announcements.') ? 'active' : '' }}">
+                <a href="{{ route('admin.announcements.index') }}"
+                    class="nav-link {{ str_starts_with((string) $routeName, 'admin.announcements.') ? 'active' : '' }}">
                     <i class="bi bi-megaphone-fill me-3"></i> Pengumuman
                 </a>
             </li>
         </ul>
-        
+
         <div class="mt-auto">
             <hr class="text-white-50 mx-3 opacity-25">
             <form method="POST" action="{{ route('logout') }}" class="px-2">
@@ -241,22 +289,26 @@
         <!-- Header Section -->
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
             <div class="d-flex align-items-center gap-3">
-                <button class="btn btn-light border d-lg-none shadow-sm text-primary" type="button" id="btnSidebarToggle">
+                <button class="btn btn-light border d-lg-none shadow-sm text-primary" type="button"
+                    id="btnSidebarToggle">
                     <i class="bi bi-list fs-4"></i>
                 </button>
                 <div>
                     <h3 class="fw-bold mb-1" style="color: #0f172a;">Mata Kuliah</h3>
-                    <p class="text-muted mb-0" style="font-size: 0.9rem;">Kelola kurikulum, beban SKS, dan pemetaan jurusan.</p>
+                    <p class="text-muted mb-0" style="font-size: 0.9rem;">Kelola kurikulum, beban SKS, dan pemetaan
+                        jurusan.</p>
                 </div>
             </div>
-            <a href="{{ route('admin.courses.create') }}" class="btn btn-primary-custom text-nowrap d-inline-flex align-items-center gap-2">
+            <a href="{{ route('admin.courses.create') }}"
+                class="btn btn-primary-custom text-nowrap d-inline-flex align-items-center gap-2">
                 <i class="bi bi-plus-circle-fill"></i> Tambah Mata Kuliah
             </a>
         </div>
 
         <!-- Session Flash Alert -->
-        @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade show border-0 shadow-sm mb-4" role="alert" style="background-color: #f0fdf4; color: #166534; border-radius: 12px;">
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show border-0 shadow-sm mb-4" role="alert"
+                style="background-color: #f0fdf4; color: #166534; border-radius: 12px;">
                 <div class="d-flex align-items-center gap-2">
                     <i class="bi bi-check-circle-fill fs-5"></i>
                     <div>{{ session('success') }}</div>
@@ -283,89 +335,96 @@
                     </thead>
                     <tbody>
                         @forelse($courses as $index => $course)
-                        <tr>
-                            <td class="ps-4 text-center text-muted fw-medium">{{ $index + 1 }}</td>
-                            <td><span class="badge-code">{{ $course->code }}</span></td>
-                            <td>
-                                <span class="badge-dept">
-                                    {{ $course->department->code ?? '-' }}
-                                </span>
-                            </td>
-                            <td class="fw-semibold text-dark" style="font-size: 0.95rem;">{{ $course->name }}</td>
-                            <td>
-                                <div class="d-flex align-items-center gap-1.5">
-                                    <i class="bi bi-award text-muted"></i>
-                                    <span>{{ $course->credits }} SKS</span>
-                                </div>
-                            </td>
-                            <td>
-                                <span class="text-secondary fw-medium">Semester {{ $course->semester }}</span>
-                            </td>
-                            <td>
-                                @if($course->status == 'active')
-                                    <span class="badge-status-active">
-                                        <i class="bi bi-dot fs-5 align-middle"></i> Aktif
+                            <tr>
+                                <td class="ps-4 text-center text-muted fw-medium">{{ $index + 1 }}</td>
+                                <td><span class="badge-code">{{ $course->code }}</span></td>
+                                <td>
+                                    <span class="badge-dept">
+                                        {{ $course->department->code ?? '-' }}
                                     </span>
-                                @else
-                                    <span class="badge-status-inactive">
-                                        <i class="bi bi-dot fs-5 align-middle"></i> Tidak Aktif
-                                    </span>
-                                @endif
-                            </td>
-                            <td>
-                                <div class="d-flex gap-2 justify-content-center">
-                                    <a href="{{ route('admin.courses.edit', $course->id) }}" class="btn btn-action btn-light border text-warning" title="Edit">
-                                        <i class="bi bi-pencil-fill"></i>
-                                    </a>
-                                    <form action="{{ route('admin.courses.destroy', $course->id) }}" method="POST" class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-action btn-light border text-danger" onclick="return confirm('Yakin ingin menghapus mata kuliah ini?')" title="Hapus">
-                                            <i class="bi bi-trash-fill"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
+                                </td>
+                                <td class="fw-semibold text-dark" style="font-size: 0.95rem;">{{ $course->name }}
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-1.5">
+                                        <i class="bi bi-award text-muted"></i>
+                                        <span>{{ $course->credits }} SKS</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-secondary fw-medium">Semester {{ $course->semester }}</span>
+                                </td>
+                                <td>
+                                    @if ($course->status == 'active')
+                                        <span class="badge bg-success bg-opacity-10 text-success px-3 py-2"
+                                            style="border-radius: 999px; font-weight: 500;">
+                                            <i class="bi bi-dot fs-5 align-middle"></i> Aktif
+                                        </span>
+                                    @else
+                                        <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2"
+                                            style="border-radius: 999px; font-weight: 500;">
+                                            <i class="bi bi-eye-slash fs-5 align-middle"></i> Tidak Aktif
+                                        </span>
+                                    @endif
+                                </td>
+                                <td>
+                                    <div class="d-flex gap-2 justify-content-center">
+                                        <a href="{{ route('admin.courses.edit', $course->id) }}"
+                                            class="btn btn-action btn-light border text-warning" title="Edit">
+                                            <i class="bi bi-pencil-fill"></i>
+                                        </a>
+                                        <form action="{{ route('admin.courses.destroy', $course->id) }}"
+                                            method="POST" class="d-inline"
+                                            onsubmit="return confirm('Yakin ingin menghapus mata kuliah ini?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-action btn-light border text-danger"
+                                                title="Hapus">
+                                                <i class="bi bi-trash-fill"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                            </tr>
                         @empty
-                        <tr>
-                            <td colspan="8" class="text-center py-5 text-muted">
-                                <div class="py-4">
-                                    <i class="bi bi-inbox-fill text-black-50" style="font-size: 3rem;"></i>
-                                    <p class="mt-3 fw-medium" style="font-size: 1.05rem;">Belum ada data mata kuliah</p>
-                                    <small class="text-muted d-block mt-1">Gunakan tombol di atas untuk menambahkan modul mata kuliah baru.</small>
-                                </div>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td colspan="8" class="text-center py-5 text-muted">
+                                    <div class="py-4">
+                                        <i class="bi bi-inbox-fill text-black-50" style="font-size: 3rem;"></i>
+                                        <p class="mt-3 fw-medium" style="font-size: 1.05rem;">Belum ada data mata
+                                            kuliah</p>
+                                        <small class="text-muted d-block mt-1">Gunakan tombol di atas untuk menambahkan
+                                            modul mata kuliah baru.</small>
+                                    </div>
+                                </td>
+                            </tr>
                         @endempty
-                    </tbody>
-                </table>
-            </div>
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const sidebarMenu = document.getElementById('sidebarMenu');
-            const btnToggle = document.getElementById('btnSidebarToggle');
-            const btnClose = document.getElementById('btnSidebarClose');
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const btnToggle = document.getElementById('btnSidebarToggle');
+        const btnClose = document.getElementById('btnSidebarClose');
 
-            if(btnToggle && sidebarMenu) {
-                btnToggle.addEventListener('click', () => sidebarMenu.classList.add('show'));
+        if (btnToggle && sidebarMenu) {
+            btnToggle.addEventListener('click', () => sidebarMenu.classList.add('show'));
+        }
+        if (btnClose && sidebarMenu) {
+            btnClose.addEventListener('click', () => sidebarMenu.classList.remove('show'));
+        }
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 992 && sidebarMenu) {
+                sidebarMenu.classList.remove('show');
             }
-
-            if(btnClose && sidebarMenu) {
-                btnClose.addEventListener('click', () => sidebarMenu.classList.remove('show'));
-            }
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth >= 992 && sidebarMenu) {
-                    sidebarMenu.classList.remove('show');
-                }
-            });
         });
-    </script>
+    });
+</script>
 </body>
+
 </html>

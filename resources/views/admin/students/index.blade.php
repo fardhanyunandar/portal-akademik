@@ -10,8 +10,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +32,7 @@
             color: #334155;
         }
 
-        /* === Sidebar Styles === */
+        /* === Sidebar === */
         .sidebar {
             min-height: 100vh;
             background: linear-gradient(160deg, var(--sidebar-top) 0%, var(--sidebar-bottom) 100%);
@@ -81,13 +80,22 @@
             width: 100%;
         }
 
-        /* === Cards & Tables === */
+        /* === Cards === */
         .card {
             border: 1px solid var(--card-border);
             border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
             overflow: hidden;
+            background: #ffffff;
+        }
+
+        .stat-card {
+            border-left: 4px solid;
+        }
+
+        /* === Tables === */
+        .table {
+            margin-bottom: 0;
         }
 
         .table thead th {
@@ -103,10 +111,13 @@
 
         .table td {
             vertical-align: middle;
-            white-space: nowrap;
             padding: 16px;
             color: #475569;
             border-bottom: 1px solid var(--card-border);
+        }
+
+        .table tbody tr {
+            transition: background-color 0.2s ease;
         }
 
         .table tbody tr:hover {
@@ -142,12 +153,44 @@
             transition: all 0.2s ease;
         }
 
+        .btn-back-custom {
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* === Badges === */
         .badge {
-            font-weight: 600;
+            font-weight: 500;
             letter-spacing: 0.3px;
             border-radius: 8px;
         }
 
+        /* === Forms === */
+        .form-control,
+        .form-select {
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+            padding: 10px 14px;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+
+        /* === Responsive === */
         @media (min-width: 992px) {
             .main-content {
                 margin-left: 260px;
@@ -166,7 +209,6 @@
             }
 
             .main-content {
-                margin-left: 0;
                 padding: 20px;
             }
         }
@@ -347,25 +389,19 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const sidebarMenu = document.getElementById('sidebarMenu');
             const btnToggle = document.getElementById('btnSidebarToggle');
             const btnClose = document.getElementById('btnSidebarClose');
 
             if (btnToggle && sidebarMenu) {
-                btnToggle.addEventListener('click', () => {
-                    sidebarMenu.classList.add('show');
-                });
+                btnToggle.addEventListener('click', () => sidebarMenu.classList.add('show'));
             }
-
             if (btnClose && sidebarMenu) {
-                btnClose.addEventListener('click', () => {
-                    sidebarMenu.classList.remove('show');
-                });
+                btnClose.addEventListener('click', () => sidebarMenu.classList.remove('show'));
             }
-
             window.addEventListener('resize', () => {
                 if (window.innerWidth >= 992 && sidebarMenu) {
                     sidebarMenu.classList.remove('show');
@@ -374,5 +410,4 @@
         });
     </script>
 </body>
-
 </html>
